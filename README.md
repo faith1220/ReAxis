@@ -2,6 +2,11 @@
 
 Research implementation associated with the manuscript by Haoran Gao, Yongzhen Huo, Yining Wang, Zhixiong Huang, Shenglan Liu, and Lin Feng.
 
+<p align="center">
+  <a href="docs/reaxis_framework.png"><img src="docs/reaxis_framework.png" width="1100" alt="ReAxis manuscript framework: Stage I learns base prompts with frozen CLIP encoders; Stage II uses normal-context weighting to reorient the semantic axis and combines fixed, base, and conditioned evidence through CREF."></a>
+</p>
+<p align="center"><em>Figure 2. Overview of ReAxis from the revised manuscript. Click the diagram to view it at full resolution.</em></p>
+
 This release organizes the existing research code under the ReAxis names used in the revised manuscript. It retains the implementation's training and inference behavior. It is **not a verified reproduction of the manuscript's result tables**. The current code differs from the manuscript in calibration sharing, feature-layer usage, a visual pretraining dependency, training losses, and spatial pooling. Read [Manuscript alignment](docs/MANUSCRIPT_ALIGNMENT.md) before interpreting results.
 
 The source distribution does not include the manuscript PDF, model weights, datasets, or private experiment logs.
