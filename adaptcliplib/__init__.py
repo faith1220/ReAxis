@@ -1,0 +1,85 @@
+# ReAxis modifications, 2026-09-09: public naming, compatibility and release packaging.
+"""ReAxis implementation and compatibility exports for existing adapters."""
+
+from .adaptclip import (PQAdapter, TextualAdapter, VisionConditionedAnchorUpdater,
+                        VisualAdapter, VisualResidualAdapter,
+                        aggregate_patch_tokens_multiscale,
+                        compute_global_local_score_batchwise, fusion_fun)
+from .reaxis import (HPRFStage22Modules, LEGACY_HPRF_MODULES_KEY,
+                       LEGACY_STAGE22_PHASE_KEY, STARCLIPDualAnchorModules,
+                       STARCLIP_MODULES_KEY, STARCLIP_PHASE_KEY,
+                       apply_hprf_preset, apply_source_memory_residual,
+                       apply_starclip_preset, binary_margin, bounded_residual,
+                       build_normal_context_feature, dual_anchor_margin_fusion,
+                       foreground_background_suppression,
+                       gaussian_smoothing_2d, legacy_linear_fusion,
+                       legacy_stage22_fusion, local_prob_two_class_from_margin,
+                       margin_to_two_class_logits,
+                       normalize_starclip_preset_name,
+                       normalize_two_class_probability,
+                       probability_to_margin, source_memory_anomaly_probability,
+                       source_patch_memory_from_features, topk_mean, uses_hprf,
+                       uses_starclip)
+from .loss import (BinaryDiceLoss, FocalLoss, patch_score_alignment_loss,
+                   semantic_consistency_regularization_loss)
+from .model_load import available_models, load
+
+__all__ = [
+    "TextualAdapter",
+    "VisualAdapter",
+    "VisualResidualAdapter",
+    "VisionConditionedAnchorUpdater",
+    "STARCLIPDualAnchorModules",
+    "HPRFStage22Modules",
+    "apply_starclip_preset",
+    "apply_hprf_preset",
+    "uses_starclip",
+    "uses_hprf",
+    "normalize_starclip_preset_name",
+    "STARCLIP_MODULES_KEY",
+    "STARCLIP_PHASE_KEY",
+    "LEGACY_HPRF_MODULES_KEY",
+    "LEGACY_STAGE22_PHASE_KEY",
+    "PQAdapter",
+    "aggregate_patch_tokens_multiscale",
+    "compute_global_local_score_batchwise",
+    "fusion_fun",
+    "binary_margin",
+    "margin_to_two_class_logits",
+    "probability_to_margin",
+    "bounded_residual",
+    "topk_mean",
+    "build_normal_context_feature",
+    "foreground_background_suppression",
+    "source_patch_memory_from_features",
+    "source_memory_anomaly_probability",
+    "apply_source_memory_residual",
+    "normalize_two_class_probability",
+    "gaussian_smoothing_2d",
+    "local_prob_two_class_from_margin",
+    "legacy_linear_fusion",
+    "dual_anchor_margin_fusion",
+    "legacy_stage22_fusion",
+    "FocalLoss",
+    "BinaryDiceLoss",
+    "patch_score_alignment_loss",
+    "semantic_consistency_regularization_loss",
+    "load",
+    "available_models",
+]
+
+# Paper-aligned public names.
+from .reaxis import (
+    ReAxisStageIIModules,
+    StructurePreservingAxisReorientation,
+    HierarchicalResidualFusion,
+    GlobalLocalAnomalyPrediction,
+    EvidenceCalibrator,
+    build_query_derived_normal_context,
+    apply_reaxis_preset,
+    uses_reaxis,
+    REAXIS_MODULES_KEY,
+    REAXIS_PHASE_KEY,
+    normalize_reaxis_preset_name
+)
+__all__ += ['ReAxisStageIIModules', 'StructurePreservingAxisReorientation', 'HierarchicalResidualFusion', 'GlobalLocalAnomalyPrediction', 'EvidenceCalibrator', 'build_query_derived_normal_context', 'apply_reaxis_preset', 'uses_reaxis', 'REAXIS_MODULES_KEY', 'REAXIS_PHASE_KEY', 'normalize_reaxis_preset_name']
